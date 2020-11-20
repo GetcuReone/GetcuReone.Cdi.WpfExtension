@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net472</TargetFramework>
         <RootNamespace>GetcuReone.Cdi</RootNamespace>
         <DocumentationFile>GetcuReone.Cdi.WpfExtension.xml</DocumentationFile>
 
@@ -51,6 +51,7 @@
 
     <ItemGroup>
         <PackageReference Include="GetcuReone.Cdi" Version="[1.0.0,)" />
+        <PackageReference Include="MvvmFrameWpf" Version="[6.1.0,)" />
     </ItemGroup>
 
 </Project>

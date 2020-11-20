@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GetcuReone.Cdi.Entities
+namespace GetcuReone.Cdi.WpfEntities
 {
     /// <summary>
     /// Object to wait.
