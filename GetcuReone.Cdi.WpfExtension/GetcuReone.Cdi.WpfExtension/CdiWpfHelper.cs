@@ -1,5 +1,7 @@
 ﻿using GetcuReone.Cdi.MvvmFrameWpf.Entities;
 using GetcuReone.FactFactory.BaseEntities;
+using GetcuReone.FactFactory.Interfaces;
+using GetcuReone.MvvmFrame.Wpf.Commands;
 using System;
 using System.Windows.Controls;
 
@@ -31,6 +33,52 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         {
             foreach (var fact in from)
                 to.Add(fact);
+        }
+
+        /// <summary>
+        /// Update and remove fact.
+        /// </summary>
+        /// <typeparam name="TFact"></typeparam>
+        /// <typeparam name="TFactContainer"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="fact"></param>
+        /// <param name="args"></param>
+        public static void TryUpdateAndRemoveFact<TFactContainer, TFact>(this TFactContainer container, TFact fact, CommandArgs args)
+            where TFactContainer : IFactContainer
+            where TFact : IFact
+        {
+            container.UpdateFact(fact);
+
+            args.AddFinalOperation(() =>
+            {
+                TFact innerFact = fact;
+                var innerContainer = container;
+
+                innerContainer.Remove(innerFact);
+            });
+        }
+
+        /// <summary>
+        /// Update and remove fact.
+        /// </summary>
+        /// <typeparam name="TFact"></typeparam>
+        /// <typeparam name="TFactContainer"></typeparam>
+        /// <param name="container"></param>
+        /// <param name="fact"></param>
+        /// <param name="args"></param>
+        public static void TryUpdateAndRemoveFact<TFactContainer, TFact>(this TFactContainer container, TFact fact, AsyncCommandArgs args)
+            where TFactContainer : IFactContainer
+            where TFact : IFact
+        {
+            container.UpdateFact(fact);
+
+            args.AddFinalOperation(() =>
+            {
+                TFact innerFact = fact;
+                var innerContainer = container;
+
+                innerContainer.Remove(innerFact);
+            });
         }
     }
 }

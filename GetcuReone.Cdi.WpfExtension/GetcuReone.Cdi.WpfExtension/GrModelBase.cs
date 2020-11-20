@@ -1,41 +1,38 @@
 ﻿using GetcuReone.Cdi.FactFactory;
-using GetcuReone.Cdi.MvvmFrameWpf.Entities;
 using GetcuReone.ComboPatterns.Adapter;
 using GetcuReone.ComboPatterns.Facade;
 using GetcuReone.ComboPatterns.Interfaces;
 using GetcuReone.FactFactory.Interfaces;
-using GetcuReone.FactFactory.Versioned.Entities;
 using GetcuReone.MvvmFrame.Wpf;
-using GetcuReone.MvvmFrame.Wpf.EventArgs;
-using System.Threading.Tasks;
 
 namespace GetcuReone.Cdi.MvvmFrameWpf
 {
     /// <inheritdoc/>
-    public abstract class GrViewModelBase : ViewModelBase, IFacadeCreation, IAdapterCreation
+    public abstract class GrModelBase : ModelBase, IFacadeCreation, IAdapterCreation
     {
         private GrFactFactory _grFactFactory;
 
         /// <summary>
-        /// Object to wait.
-        /// </summary>
-        public virtual Awaiter Awaiter { get; protected set; } = new Awaiter();
-
-        /// <summary>
         /// Container.
         /// </summary>
-        public virtual IFactContainer Container { get; protected set; } = new VersionedFactContainer();
+        public virtual IFactContainer Container { get; set; }
 
         /// <inheritdoc/>
-        public virtual TAdapter GetAdapter<TAdapter>() where TAdapter : IAdapter, new()
+        public TAdapter GetAdapter<TAdapter>() where TAdapter : IAdapter, new()
         {
-            return AdapterBase.Create<TAdapter>(this);
+            if (Factory is IAdapterCreation adapterCreation)
+                return adapterCreation.GetAdapter<TAdapter>();
+
+            return AdapterBase.Create<TAdapter>(Factory);
         }
 
         /// <inheritdoc/>
         public virtual TFacade GetFacade<TFacade>() where TFacade : IFacade, new()
         {
-            return FacadeBase.Create<TFacade>(this);
+            if (Factory is IFacadeCreation facadeCreation)
+                return facadeCreation.GetFacade<TFacade>();
+
+            return FacadeBase.Create<TFacade>(Factory);
         }
 
         /// <summary>
@@ -48,41 +45,8 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             where TFactRulesProvider : GrFactRulesProviderBase, new()
         {
             if (_grFactFactory == null || needNewFactory || !_grFactFactory.IsRulesProvider<TFactRulesProvider>())
-                _grFactFactory = CdiHelper.CreateFactFactory<TFactRulesProvider>(this);
+                _grFactFactory = CdiHelper.CreateFactFactory<TFactRulesProvider>(Factory);
             return _grFactFactory;
-        }
-
-        /// <summary>
-        /// Try navigation back.
-        /// </summary>
-        protected virtual void TryGoBack()
-        {
-            if (NavigationManager.CanGoBack)
-                NavigationManager.GoBack();
-        }
-
-        /// <inheritdoc/>
-        protected override void Initialize()
-        {
-
-        }
-
-        /// <inheritdoc/>
-        protected override ValueTask OnGoPageAsync(object navigateParam)
-        {
-            return default;
-        }
-
-        /// <inheritdoc/>
-        protected override ValueTask OnLeavePageAsync(NavigatingEventArgs args)
-        {
-            return default;
-        }
-
-        /// <inheritdoc/>
-        protected override ValueTask OnLoadPageAsync()
-        {
-            return default;
         }
 
         /// <inheritdoc/>
