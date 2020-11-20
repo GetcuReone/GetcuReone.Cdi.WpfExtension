@@ -1,5 +1,5 @@
 ﻿using GetcuReone.Cdi.FactFactory;
-using GetcuReone.Cdi.WpfEntities;
+using GetcuReone.Cdi.MvvmFrameWpf.Entities;
 using GetcuReone.ComboPatterns.Adapter;
 using GetcuReone.ComboPatterns.Facade;
 using GetcuReone.ComboPatterns.Interfaces;
@@ -7,7 +7,7 @@ using GetcuReone.MvvmFrame.Wpf;
 using GetcuReone.MvvmFrame.Wpf.EventArgs;
 using System.Threading.Tasks;
 
-namespace GetcuReone.Cdi
+namespace GetcuReone.Cdi.MvvmFrameWpf
 {
     /// <inheritdoc/>
     public abstract class GrViewModelBase : ViewModelBase, IFacadeCreation, IAdapterCreation

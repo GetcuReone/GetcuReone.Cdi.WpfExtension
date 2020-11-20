@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
-        <RootNamespace>GetcuReone.Cdi</RootNamespace>
+        <RootNamespace>GetcuReone.Cdi.MvvmFrameWpf</RootNamespace>
         <DocumentationFile>GetcuReone.Cdi.WpfExtension.xml</DocumentationFile>
 
         <Authors>Itua Juel-Gaben</Authors>

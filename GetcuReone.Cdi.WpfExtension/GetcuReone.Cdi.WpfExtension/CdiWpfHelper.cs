@@ -1,9 +1,9 @@
-﻿using GetcuReone.Cdi.WpfEntities;
+﻿using GetcuReone.Cdi.MvvmFrameWpf.Entities;
 using GetcuReone.FactFactory.BaseEntities;
 using System;
 using System.Windows.Controls;
 
-namespace GetcuReone.Cdi
+namespace GetcuReone.Cdi.MvvmFrameWpf
 {
     /// <summary>
     /// Helper for GetcuReone.Cdi.Wpf.

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace GetcuReone.Cdi.WpfEntities
+namespace GetcuReone.Cdi.MvvmFrameWpf.Entities
 {
     internal sealed class VisibleFrameScope : IDisposable
     {
