@@ -1,0 +1,1 @@
+GetcuReone.Cdi.WpfExtension
