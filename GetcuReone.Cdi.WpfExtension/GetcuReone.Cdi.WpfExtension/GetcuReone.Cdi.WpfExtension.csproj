@@ -50,7 +50,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.0,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.1,)" />
         <PackageReference Include="MvvmFrameWpf" Version="[6.1.0,)" />
     </ItemGroup>
 
