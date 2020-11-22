@@ -79,6 +79,11 @@
         <member name="T:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase">
             <inheritdoc/>
         </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.NLogger">
+            <summary>
+            Logger.
+            </summary>
+        </member>
         <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.Container">
             <summary>
             Container.
@@ -110,6 +115,11 @@
         <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.Awaiter">
             <summary>
             Object to wait.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.NLogger">
+            <summary>
+            Logger.
             </summary>
         </member>
         <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.Container">
