@@ -1,5 +1,6 @@
 ﻿using GetcuReone.Cdi.FactFactory;
 using GetcuReone.Cdi.MvvmFrameWpf.Entities;
+using GetcuReone.Cdo.Logging;
 using GetcuReone.ComboPatterns.Adapter;
 using GetcuReone.ComboPatterns.Facade;
 using GetcuReone.ComboPatterns.Interfaces;
@@ -20,6 +21,12 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         /// Object to wait.
         /// </summary>
         public virtual Awaiter Awaiter { get; protected set; } = new Awaiter();
+
+        /// <summary>
+        /// Logger.
+        /// </summary>
+        protected NLogAdapter NLogger => _nLogAdapter ?? (_nLogAdapter = GetAdapter<NLogAdapter>());
+        private NLogAdapter _nLogAdapter;
 
         /// <summary>
         /// Container.

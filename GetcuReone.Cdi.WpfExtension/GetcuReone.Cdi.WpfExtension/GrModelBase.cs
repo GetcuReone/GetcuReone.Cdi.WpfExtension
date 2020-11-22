@@ -1,4 +1,5 @@
 ﻿using GetcuReone.Cdi.FactFactory;
+using GetcuReone.Cdo.Logging;
 using GetcuReone.ComboPatterns.Adapter;
 using GetcuReone.ComboPatterns.Facade;
 using GetcuReone.ComboPatterns.Interfaces;
@@ -11,6 +12,12 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
     public abstract class GrModelBase : ModelBase, IFacadeCreation, IAdapterCreation
     {
         private GrFactFactory _grFactFactory;
+
+        /// <summary>
+        /// Logger.
+        /// </summary>
+        protected NLogAdapter NLogger => _nLogAdapter ?? (_nLogAdapter = GetAdapter<NLogAdapter>());
+        private NLogAdapter _nLogAdapter;
 
         /// <summary>
         /// Container.
