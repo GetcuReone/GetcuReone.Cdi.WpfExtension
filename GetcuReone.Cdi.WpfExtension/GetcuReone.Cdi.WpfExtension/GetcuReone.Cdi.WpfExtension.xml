@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GetcuReone.Cdi.WpfExtension</name>
+    </assembly>
+    <members>
+        <member name="T:GetcuReone.Cdi.MvvmFrameWpf.CdiWpfHelper">
+            <summary>
+            Helper for GetcuReone.Cdi.Wpf.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.CdiWpfHelper.CreateVisibleScope(System.Windows.Controls.Frame)">
+            <summary>
+            Create visibile scope.
+            </summary>
+            <param name="frame"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.CdiWpfHelper.CopyTo``2(``0,``1)">
+            <summary>
+            Copy container.
+            </summary>
+            <param name="from"></param>
+            <param name="to"></param>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.CdiWpfHelper.TryUpdateAndRemoveFact``2(``0,``1,GetcuReone.MvvmFrame.Wpf.Commands.CommandArgs)">
+            <summary>
+            Update and remove fact.
+            </summary>
+            <typeparam name="TFact"></typeparam>
+            <typeparam name="TFactContainer"></typeparam>
+            <param name="container"></param>
+            <param name="fact"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.CdiWpfHelper.TryUpdateAndRemoveFact``2(``0,``1,GetcuReone.MvvmFrame.Wpf.Commands.AsyncCommandArgs)">
+            <summary>
+            Update and remove fact.
+            </summary>
+            <typeparam name="TFact"></typeparam>
+            <typeparam name="TFactContainer"></typeparam>
+            <param name="container"></param>
+            <param name="fact"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter">
+            <summary>
+            Object to wait.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter.Finished">
+            <summary>
+            Finished.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter.#ctor(System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="waitStep"></param>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter.Finish">
+            <summary>
+            Finish.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter.AddChild(GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter)">
+            <summary>
+            Add child <see cref="T:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter"/>.
+            </summary>
+            <param name="awaiter"></param>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.Entities.Awaiter.WaitFinishAsync">
+            <summary>
+            wait for the end.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase">
+            <inheritdoc/>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.NLogger">
+            <summary>
+            Logger.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.Container">
+            <summary>
+            Container.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.GetAdapter``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.GetFacade``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.GetFactFactory``1(System.Boolean)">
+            <summary>
+            Get fact factory.
+            </summary>
+            <typeparam name="TFactRulesProvider"></typeparam>
+            <param name="needNewFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.GetModel``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.BindModel``1(``0)">
+            <inheritdoc/>
+        </member>
+        <member name="T:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase">
+            <inheritdoc/>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.Awaiter">
+            <summary>
+            Object to wait.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.NLogger">
+            <summary>
+            Logger.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.Container">
+            <summary>
+            Container.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.GetAdapter``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.GetFacade``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.GetFactFactory``1(System.Boolean)">
+            <summary>
+            Get fact factory.
+            </summary>
+            <typeparam name="TFactRulesProvider"></typeparam>
+            <param name="needNewFactory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.TryGoBack">
+            <summary>
+            Try navigation back.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.Initialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.OnGoPageAsync(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.OnLeavePageAsync(GetcuReone.MvvmFrame.Wpf.EventArgs.NavigatingEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.OnLoadPageAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.GetModel``1">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.BindModel``1(``0)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
