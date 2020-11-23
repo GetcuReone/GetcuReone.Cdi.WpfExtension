@@ -1,4 +1,4 @@
-# GetcuReone.Cdi
+# GetcuReone.Cdi.WpfExtension
 
 Common domain infrastructure for Wpf.
 
