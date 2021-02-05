@@ -76,6 +76,16 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:GetcuReone.Cdi.MvvmFrameWpf.Entities.NavigationInfo">
+            <summary>
+            Navigation info.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.Entities.NavigationInfo.LatestViewModel">
+            <summary>
+            Latest navigation view-model.
+            </summary>
+        </member>
         <member name="T:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase">
             <inheritdoc/>
         </member>
@@ -109,12 +119,30 @@
         <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrModelBase.BindModel``1(``0)">
             <inheritdoc/>
         </member>
+        <member name="T:GetcuReone.Cdi.MvvmFrameWpf.GrUiServiceBase">
+            <inheritdoc/>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrUiServiceBase.VisibilityFrame">
+            <summary>
+            Frame visibility.
+            </summary>
+        </member>
         <member name="T:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase">
             <inheritdoc/>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.TitlePage">
+            <summary>
+            Title page.
+            </summary>
         </member>
         <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.Awaiter">
             <summary>
             Object to wait.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.NavigationInfo">
+            <summary>
+            Navigation info.
             </summary>
         </member>
         <member name="P:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.NLogger">
@@ -162,6 +190,9 @@
             <inheritdoc/>
         </member>
         <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.BindModel``1(``0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdi.MvvmFrameWpf.GrViewModelBase.GetViewModel``1">
             <inheritdoc/>
         </member>
     </members>
