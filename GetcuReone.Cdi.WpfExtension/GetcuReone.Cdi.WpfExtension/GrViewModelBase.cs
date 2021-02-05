@@ -18,9 +18,21 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         private GrFactFactory _grFactFactory;
 
         /// <summary>
+        /// Title page.
+        /// </summary>
+        public virtual string TitlePage { get => _titlePage; protected set => SetPropertyValue(ref _titlePage, value); }
+        private string _titlePage;
+
+        /// <summary>
         /// Object to wait.
         /// </summary>
         public virtual Awaiter Awaiter { get; protected set; } = new Awaiter();
+
+        /// <summary>
+        /// Navigation info.
+        /// </summary>
+        public NavigationInfo NavigationInfo { get => _navigationInfo; protected set => SetPropertyValue(ref _navigationInfo, value); }
+        private NavigationInfo _navigationInfo;
 
         /// <summary>
         /// Logger.
@@ -31,7 +43,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         /// <summary>
         /// Container.
         /// </summary>
-        public virtual IFactContainer Container { get; protected set; } = new VersionedFactContainer();
+        public virtual IFactContainer Container { get; protected set; }
 
         /// <inheritdoc/>
         public virtual TAdapter GetAdapter<TAdapter>() where TAdapter : IAdapter, new()
@@ -71,12 +83,16 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         /// <inheritdoc/>
         protected override void Initialize()
         {
-
+            if (Container == null)
+                Container = new VersionedFactContainer();
+            if (NavigationInfo == null)
+                NavigationInfo = GetModel<NavigationInfo>();
         }
 
         /// <inheritdoc/>
         protected override ValueTask OnGoPageAsync(object navigateParam)
         {
+            NavigationInfo.LatestViewModel = this;
             return default;
         }
 
@@ -114,6 +130,19 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             {
                 modelBase.Container = Container;
             }
+        }
+
+        /// <inheritdoc/>
+        public override TViewModel GetViewModel<TViewModel>()
+        {
+            var viewModel = base.GetViewModel<TViewModel>();
+
+            if (viewModel is GrViewModelBase viewModelBase)
+            {
+                viewModelBase.NavigationInfo = NavigationInfo;
+            }
+
+            return viewModel;
         }
     }
 }
