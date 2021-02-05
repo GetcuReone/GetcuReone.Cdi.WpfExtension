@@ -92,7 +92,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         /// <inheritdoc/>
         protected override ValueTask OnGoPageAsync(object navigateParam)
         {
-            NavigationInfo.LatestViewModel = this;
+            NavigationInfo.LastTitlePage = TitlePage;
             return default;
         }
 
@@ -116,6 +116,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             if (model is GrModelBase modelBase)
             {
                 modelBase.Container = Container;
+                modelBase.NavigationInfo = NavigationInfo;
             }
 
             return model;
@@ -129,6 +130,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             if (model is GrModelBase modelBase)
             {
                 modelBase.Container = Container;
+                modelBase.NavigationInfo = NavigationInfo;
             }
         }
 

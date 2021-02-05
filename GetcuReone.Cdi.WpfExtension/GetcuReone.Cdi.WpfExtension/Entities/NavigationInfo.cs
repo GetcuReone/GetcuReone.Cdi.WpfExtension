@@ -8,9 +8,9 @@ namespace GetcuReone.Cdi.MvvmFrameWpf.Entities
     public class NavigationInfo : ModelBase
     {
         /// <summary>
-        /// Latest navigation view-model.
+        /// last title page.
         /// </summary>
-        public GrViewModelBase LatestViewModel { get => _latestViewModel; set => SetPropertyValue(ref _latestViewModel, value); }
-        private GrViewModelBase _latestViewModel;
+        public string LastTitlePage { get => _lastTitlePage; set => SetPropertyValue(ref _lastTitlePage, value); }
+        private string _lastTitlePage;
     }
 }

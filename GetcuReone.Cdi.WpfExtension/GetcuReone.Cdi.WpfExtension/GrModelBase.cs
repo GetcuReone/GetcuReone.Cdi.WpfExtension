@@ -1,4 +1,5 @@
 ﻿using GetcuReone.Cdi.FactFactory;
+using GetcuReone.Cdi.MvvmFrameWpf.Entities;
 using GetcuReone.Cdo.Logging;
 using GetcuReone.ComboPatterns.Adapter;
 using GetcuReone.ComboPatterns.Facade;
@@ -12,6 +13,12 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
     public abstract class GrModelBase : ModelBase, IFacadeCreation, IAdapterCreation
     {
         private GrFactFactory _grFactFactory;
+
+        /// <summary>
+        /// Navigation info.
+        /// </summary>
+        public NavigationInfo NavigationInfo { get => _navigationInfo; set => SetPropertyValue(ref _navigationInfo, value); }
+        private NavigationInfo _navigationInfo;
 
         /// <summary>
         /// Logger.
@@ -64,6 +71,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             if (model is GrModelBase modelBase)
             {
                 modelBase.Container = Container;
+                modelBase.NavigationInfo = NavigationInfo;
             }
 
             return model;
@@ -77,6 +85,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             if (model is GrModelBase modelBase)
             {
                 modelBase.Container = Container;
+                modelBase.NavigationInfo = NavigationInfo;
             }
         }
     }
