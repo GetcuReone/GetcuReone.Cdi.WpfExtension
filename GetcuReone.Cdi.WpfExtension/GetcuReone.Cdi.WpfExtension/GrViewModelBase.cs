@@ -6,9 +6,13 @@ using GetcuReone.ComboPatterns.Facade;
 using GetcuReone.ComboPatterns.Interfaces;
 using GetcuReone.FactFactory.Interfaces;
 using GetcuReone.FactFactory.Versioned.Entities;
+using GetcuReone.MvvmFrame.Interfaces;
 using GetcuReone.MvvmFrame.Wpf;
+using GetcuReone.MvvmFrame.Wpf.Entities;
 using GetcuReone.MvvmFrame.Wpf.EventArgs;
+using GetcuReone.MvvmFrame.Wpf.Interfaces;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace GetcuReone.Cdi.MvvmFrameWpf
 {
@@ -143,6 +147,27 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
             {
                 viewModelBase.NavigationInfo = NavigationInfo;
             }
+
+            return viewModel;
+        }
+
+        /// <summary>
+        /// Method creation veiw-model.
+        /// </summary>
+        /// <typeparam name="TViewModel"></typeparam>
+        /// <param name="frame">Frame to which pages will be linked and view-model.</param>
+        /// <param name="options"></param>
+        /// <param name="uiServices"></param>
+        /// <param name="navigationManager"></param>
+        /// <param name="factContainer"></param>
+        /// <param name="navigationInfo"></param>
+        /// <returns></returns>
+        public static TViewModel CreateGrViewModel<TViewModel>(Frame frame, IModelOptions options = null, IConfigUiServices uiServices = null, NavigationViewModelManager navigationManager = null, IFactContainer factContainer = null, NavigationInfo navigationInfo = null)
+            where TViewModel : GrViewModelBase, new()
+        {
+            var viewModel = CreateViewModel<TViewModel>(frame, options, uiServices, navigationManager);
+            viewModel.Container = factContainer;
+            viewModel.NavigationInfo = navigationInfo;
 
             return viewModel;
         }
