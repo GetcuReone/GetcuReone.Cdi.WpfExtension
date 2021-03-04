@@ -145,6 +145,7 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
 
             if (viewModel is GrViewModelBase viewModelBase)
             {
+                viewModelBase.Container = Container;
                 viewModelBase.NavigationInfo = NavigationInfo;
             }
 
