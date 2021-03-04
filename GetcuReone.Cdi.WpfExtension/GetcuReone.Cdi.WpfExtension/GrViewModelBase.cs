@@ -96,7 +96,8 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         /// <inheritdoc/>
         protected override ValueTask OnGoPageAsync(object navigateParam)
         {
-            NavigationInfo.LastTitlePage = TitlePage;
+            if (NavigationInfo != null)
+                NavigationInfo.LastTitlePage = TitlePage;
             return default;
         }
 
