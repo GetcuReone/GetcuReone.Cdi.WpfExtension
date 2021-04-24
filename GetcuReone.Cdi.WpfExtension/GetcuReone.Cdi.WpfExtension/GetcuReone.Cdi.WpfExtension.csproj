@@ -12,7 +12,7 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>getcureone cdi wpf mvvmframewpf</PackageTags>
         <PackageReleaseNotes>Changes:
-        - changes from the configuration file are taken into code
+        - changes from the configuration file are taken in code
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdi.WpfExtension</PackageProjectUrl>
