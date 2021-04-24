@@ -12,7 +12,7 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>getcureone cdi wpf mvvmframewpf</PackageTags>
         <PackageReleaseNotes>Changes:
-        - fix assembly version
+        - changes from the configuration file are taken in code
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdi.WpfExtension</PackageProjectUrl>
@@ -43,7 +43,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.7,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="[2.0.0,)" />
         <PackageReference Include="MvvmFrameWpf" Version="[7.0.0,)" />
     </ItemGroup>
 
