@@ -14,7 +14,7 @@
         <PackageTags>getcureone cdi wpf mvvmframewpf</PackageTags>
         <PackageReleaseNotes>
             Changes:
-            - support for changes in the GetcuReone.Cdi.3.0.0 library
+            - support for changes in the GetcuReone.Cdi.3.0.1 library
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdi.WpfExtension</PackageProjectUrl>
@@ -45,7 +45,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="3.0.0" />
+        <PackageReference Include="GetcuReone.Cdi" Version="3.0.1" />
         <PackageReference Include="MvvmFrameWpf" Version="7.0.0" />
     </ItemGroup>
 
