@@ -1,14 +1,8 @@
-﻿using GetcuReone.MvvmFrame.Wpf.Entities;
-using System.Windows;
+﻿using System;
 
 namespace GetcuReone.Cdi.MvvmFrameWpf
 {
-    /// <inheritdoc/>
-    public abstract class GrUiServiceBase : UiServiceBase
-    {
-        /// <summary>
-        /// Frame visibility.
-        /// </summary>
-        public Visibility VisibilityFrame { get => Frame.Visibility; set => Frame.Visibility = value; }
-    }
+    /// <inheritdoc />
+    [Obsolete("[2.0.1] Use BaseGrUiService")]
+    public abstract class GrUiServiceBase : BaseGrUiService { }
 }
