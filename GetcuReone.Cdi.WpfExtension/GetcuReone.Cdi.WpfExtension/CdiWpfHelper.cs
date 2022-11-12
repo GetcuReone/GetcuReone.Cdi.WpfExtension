@@ -1,5 +1,5 @@
-﻿using GetcuReone.Cdi.MvvmFrameWpf.Entities;
-using GetcuReone.FactFactory.BaseEntities;
+﻿using GetcuReone.Cdi.Extensions;
+using GetcuReone.Cdi.MvvmFrameWpf.Entities;
 using GetcuReone.FactFactory.Interfaces;
 using GetcuReone.MvvmFrame.Wpf.Commands;
 using System;
@@ -25,14 +25,11 @@ namespace GetcuReone.Cdi.MvvmFrameWpf
         /// <summary>
         /// Copy container.
         /// </summary>
-        /// <param name="from"></param>
-        /// <param name="to"></param>
-        public static void CopyTo<TFactContainerFrom, TFactContainerTo>(this TFactContainerFrom from, TFactContainerTo to)
-            where TFactContainerFrom : FactContainerBase
-            where TFactContainerTo : FactContainerBase
+        /// <param name="from">Container to copy from.</param>
+        /// <param name="to">Container to copy to.</param>
+        public static void CopyTo(this IFactContainer from, IFactContainer to)
         {
-            foreach (var fact in from)
-                to.Add(fact);
+            to.AddRange(from);
         }
 
         /// <summary>

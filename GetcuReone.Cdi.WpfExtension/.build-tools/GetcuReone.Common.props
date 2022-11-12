@@ -7,7 +7,7 @@
         <RootNamespace>$(MSBuildProjectName)</RootNamespace>
         <AssemblyName>$(MSBuildProjectName)</AssemblyName>
 
-        <MajorVersion>$([MSBuild]::ValueOrDefault('$(majorVersion)', '1'))</MajorVersion>
+        <MajorVersion>$([MSBuild]::ValueOrDefault('$(majorVersion)', '2'))</MajorVersion>
         <MinorVersion>$([MSBuild]::ValueOrDefault('$(minorVersion)', '0'))</MinorVersion>
         <PatchVersion>$([MSBuild]::ValueOrDefault('$(patchVersion)', '0'))</PatchVersion>
         <PackageVersion>$(majorVersion).$(minorVersion).$(patchVersion)</PackageVersion>
