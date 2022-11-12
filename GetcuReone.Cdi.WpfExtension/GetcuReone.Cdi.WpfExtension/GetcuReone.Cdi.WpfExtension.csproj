@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\.buildTools\GetcuReone.Lib.props" />
+    <Import Project="..\.build-tools\GetcuReone.Lib.props" />
 
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
+        <RootNamespace>GetcuReone.Cdi.MvvmFrameWpf</RootNamespace>
         
         <PackageId>GetcuReone.Cdi.WpfExtension</PackageId>
         <Product>GetcuReone.Cdi.WpfExtension</Product>
@@ -11,8 +12,9 @@
         <RepositoryUrl>https://github.com/GetcuReone/GetcuReone.Cdi.WpfExtension</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>getcureone cdi wpf mvvmframewpf</PackageTags>
-        <PackageReleaseNotes>Changes:
-        - changes from the configuration file are taken in code
+        <PackageReleaseNotes>
+            Changes:
+            - support for changes in the GetcuReone.Cdi.3.0.0 library
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdi.WpfExtension</PackageProjectUrl>
@@ -43,8 +45,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="[2.0.0,)" />
-        <PackageReference Include="MvvmFrameWpf" Version="[7.0.0,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="3.0.0" />
+        <PackageReference Include="MvvmFrameWpf" Version="7.0.0" />
     </ItemGroup>
 
 </Project>

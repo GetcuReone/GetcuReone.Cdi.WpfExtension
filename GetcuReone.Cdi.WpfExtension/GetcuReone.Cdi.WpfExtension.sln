@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30611.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetcuReone.Cdi.WpfExtension", "GetcuReone.Cdi.WpfExtension\GetcuReone.Cdi.WpfExtension.csproj", "{A12492EB-866B-4B82-9ACC-3F74C1CA2979}"
 EndProject
@@ -9,10 +9,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfrastructureTests", "Infrastructure\InfrastructureTests\InfrastructureTests.csproj", "{0578E77A-9DDB-44B5-A25D-6D041DF64B2F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".buildTools", ".buildTools", "{D95CC01D-4D78-43E7-AF9F-F5E6F319AF80}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build-tools", ".build-tools", "{D95CC01D-4D78-43E7-AF9F-F5E6F319AF80}"
 	ProjectSection(SolutionItems) = preProject
-		.buildTools\GetcuReone.Common.props = .buildTools\GetcuReone.Common.props
-		.buildTools\GetcuReone.Lib.props = .buildTools\GetcuReone.Lib.props
+		.build-tools\getcureone-documentation.props = .build-tools\getcureone-documentation.props
+		.build-tools\GetcuReone.Common.props = .build-tools\GetcuReone.Common.props
+		.build-tools\GetcuReone.Lib.props = .build-tools\GetcuReone.Lib.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{88DCB829-6739-419A-9146-8FBF3B63484F}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE.txt = ..\LICENSE.txt
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{B6D46DC0-D499-4E8A-A62D-E2042AF39349}"
+	ProjectSection(SolutionItems) = preProject
+		..\Pipelines\develop-pipeline.yml = ..\Pipelines\develop-pipeline.yml
+		..\Pipelines\master-pipeline.yml = ..\Pipelines\master-pipeline.yml
+		..\Pipelines\release-pipeline.yml = ..\Pipelines\release-pipeline.yml
 	EndProjectSection
 EndProject
 Global
@@ -35,6 +50,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0578E77A-9DDB-44B5-A25D-6D041DF64B2F} = {99D87108-D7C9-4771-9921-4F30A731A0D3}
+		{B6D46DC0-D499-4E8A-A62D-E2042AF39349} = {88DCB829-6739-419A-9146-8FBF3B63484F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ADACE6CE-E764-49E8-88E4-EC3658D93957}
